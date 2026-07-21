@@ -2,14 +2,15 @@
 
      $active_group = 'default';
      $active_record = FALSE;
-     $db['default']['hostname'] = '';
-     $db['default']['username'] = '';
-     $db['default']['password'] = '';
-     $db['default']['database'] = '';
+     $db['default']['hostname'] = getenv('MYSQLHOST')     ?: '';
+     $db['default']['username'] = getenv('MYSQLUSER')     ?: '';
+     $db['default']['password'] = getenv('MYSQLPASSWORD') ?: '';
+     $db['default']['database'] = getenv('MYSQLDATABASE') ?: '';
+     $db['default']['port']     = getenv('MYSQLPORT')     ?: 3306;
      $db['default']['dbdriver'] = 'mysqli';
      $db['default']['dbprefix'] = '';
      $db['default']['pconnect'] = FALSE;
-     $db['default']['db_debug'] = TRUE;
+     $db['default']['db_debug'] = FALSE;
      $db['default']['cache_on'] = FALSE;
      $db['default']['cachedir'] = '';
      $db['default']['char_set'] = 'utf8';
